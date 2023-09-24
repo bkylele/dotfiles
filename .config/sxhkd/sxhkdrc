@@ -1,0 +1,26 @@
+
+# Open qutebrowser
+super + q
+    qutebrowser
+
+# Raise volume
+# For all volume controls, refresh the statusbar
+XF86AudioRaiseVolume
+    pactl set-sink-volume @DEFAULT_SINK@ +5%; pkill -P $(<~/.local/bin/barsleep.pid) sleep
+
+# Lower volume
+XF86AudioLowerVolume
+    pactl set-sink-volume @DEFAULT_SINK@ -5%; pkill -P $(<~/.local/bin/barsleep.pid) sleep
+
+# Mute
+XF86AudioMute
+    pactl set-sink-mute @DEFAULT_SINK@ toggle
+
+# Screenshot
+Print
+    import $HOME/pix/image.png && xclip -selection clipboard -target image/png -i $HOME/pix/image.png
+
+
+
+
+

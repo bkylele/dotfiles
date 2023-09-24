@@ -1,0 +1,37 @@
+#! /bin/sh
+
+getDateTime() {
+    d="$(date +%F) ($(date +%a)) $(date +%H:%M)"
+}
+
+getBattery() {
+    isPlugged="$(cat /sys/class/power_supply/ADP1/online)"
+    charge="$(cat /sys/class/power_supply/BAT1/capacity)%"
+    if [ $isPlugged -eq 1 ]; then
+        charge="⚡ $charge"
+    else
+        charge=" $charge"
+    fi
+}
+
+getVolume() {
+    vol="$(pamixer --get-volume)%"
+    if [ $vol -eq "0" ]; then
+        vol=" $vol"
+    else
+        vol=" $vol"
+    fi
+}
+
+while :; do
+    getDateTime
+    getBattery
+    getVolume
+
+    xsetroot -name "| $vol | $charge | $d "
+
+    echo $$ > ~/.local/bin/barsleep.pid
+
+    sleep 1m
+done
+
