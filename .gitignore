@@ -1,0 +1,9 @@
+.cargo/
+.mozilla/
+.npm/
+.pki/
+.ssh/
+dl/
+dox/
+pix/
+prjx/

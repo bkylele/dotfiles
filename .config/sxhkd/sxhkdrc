@@ -20,7 +20,10 @@ XF86AudioMute
 Print
     import $HOME/pix/image.png && xclip -selection clipboard -target image/png -i $HOME/pix/image.png
 
+# Brightness Up
+XF86MonBrightnessUp
+   brightnessctl -d "intel_backlight" set +10% 
 
-
-
-
+# Brightness Down
+XF86MonBrightnessDown
+   brightnessctl -d "intel_backlight" set 10%-
