@@ -3,6 +3,10 @@
 super + q
     qutebrowser
 
+# Open xournal
+super + w
+    xournalpp
+
 # Raise volume
 # For all volume controls, refresh the statusbar
 XF86AudioRaiseVolume
@@ -22,8 +26,9 @@ Print
 
 # Brightness Up
 XF86MonBrightnessUp
-   brightnessctl -d "intel_backlight" set +10% 
+   brightnessctl -d "intel_backlight" set +5% 
 
 # Brightness Down
 XF86MonBrightnessDown
-   brightnessctl -d "intel_backlight" set 10%-
+   brightnessctl -d "intel_backlight" set 5%-
+

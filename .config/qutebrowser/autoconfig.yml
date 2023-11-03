@@ -17,8 +17,10 @@ settings:
   colors.statusbar.url.success.https.fg:
     global: white
   colors.webpage.darkmode.enabled:
-    global: true
+    global: false
   content.autoplay:
     global: false
+  content.desktop_capture:
+    https://discord.com: true
   content.media.audio_capture:
     https://discord.com: true

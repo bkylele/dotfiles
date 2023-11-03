@@ -6,11 +6,13 @@ getDateTime() {
 
 getBattery() {
     isPlugged="$(cat /sys/class/power_supply/ADP1/online)"
-    charge="$(cat /sys/class/power_supply/BAT1/capacity)%"
+    charge="$(cat /sys/class/power_supply/BAT1/capacity)"
     if [ $isPlugged -eq 1 ]; then
-        charge="⚡ $charge"
+        charge="⚡ $charge%"
+    elif [ $(($charge)) -lt 25 ]; then
+        charge="🪫 $charge%"
     else
-        charge=" $charge"
+        charge=" $charge%"
     fi
 }
 
@@ -23,10 +25,14 @@ getVolume() {
     fi
 }
 
-while :; do
+getInfo() {
     getDateTime
     getBattery
     getVolume
+}
+
+while :; do
+    getInfo
 
     xsetroot -name "| $vol | $charge | $d "
 
