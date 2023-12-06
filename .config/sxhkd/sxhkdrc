@@ -7,6 +7,10 @@ super + q
 super + w
     xournalpp
 
+# Open discord
+super + d
+    discord
+
 # Raise volume
 # For all volume controls, refresh the statusbar
 XF86AudioRaiseVolume

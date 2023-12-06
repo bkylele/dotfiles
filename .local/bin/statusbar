@@ -1,7 +1,8 @@
 #! /bin/sh
 
 getDateTime() {
-    d="$(date +%F) ($(date +%a)) $(date +%H:%M)"
+    # d="$(date +%F) ($(date +%a)) $(date +%H:%M)"
+    d="$(date '+%F (%a) %I:%M %p')"
 }
 
 getBattery() {

@@ -16,6 +16,13 @@ PS1='\[\033[1;31m\][\[\033[1;33m\]\u\[\033[1;32m\]@\[\033[1;34m\]\h:\[\033[35m\]
 # Add '~/.local/bin/ to $PATH
 export PATH=$PATH:~/.local/bin/
 
+alias py=python
+
+# # start tmux
+#if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+#      exec tmux
+#fi
+
 
 ############################## Default Programs ###############################
 export EDITOR="nvim"
